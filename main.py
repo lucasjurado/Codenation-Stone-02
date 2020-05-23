@@ -3,6 +3,8 @@
 
 from abc import ABC, abstractmethod
 
+GET_HOURS = 8
+COEFICIENTE_BONUS = 0.15
 
 class Department:
     def __init__(self, name, code):
@@ -26,10 +28,6 @@ class Employee(ABC):
     def calc_bonus(self):
         pass
 
-    @abstractmethod
-    def get_hours(self):
-        pass
-
     # 6.Implemente o método get_department que retorna o nome
     # do departamento e set_department que muda o nome do
     # departamento para as classes Manager e Seller
@@ -41,7 +39,7 @@ class Employee(ABC):
 
     # 7.Padronize uma carga horária de 8 horas para todos os funcionários.
     def get_hours(self):
-        return 8
+        return GET_HOURS
 
 
 # 4.Faça a correção dos métodos para que a herança funcione corretamente.
@@ -52,7 +50,7 @@ class Manager(Employee):
         )
 
     def calc_bonus(self):
-        return self.salary * 0.15
+        return self.salary * COEFICIENTE_BONUS
 
 
 class Seller(Employee):
@@ -74,4 +72,4 @@ class Seller(Employee):
     # 8.O cálculo do metodo calc_bonus do Vendedor deve ser calculado pelo
     # total de suas vendas vezes 0.15
     def calc_bonus(self):
-        return self._sales * 0.15
+        return self._sales * COEFICIENTE_BONUS
