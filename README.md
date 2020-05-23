@@ -1,2 +1,0 @@
-# Codenation-Stone-02
-  - - - - 
